@@ -25,6 +25,44 @@ The infrastructure operates as a closed-loop settlement engine:
 * **Persistent Cursor Management:** The Agent worker maintains a persistent block-height cursor with a 3-block safety buffer to ensure data availability and prevent RPC indexing collisions.
 * **OData Compliance:** Middleware adheres to standard SAP S/4HANA OData payloads for seamless enterprise integration.
 
----
+
+## 📍 Core Infrastructure (Avalanche Testnet)
+* **SnowGate Registry:** `0x48f1CeBF46122a6f7Db6328CFf884bDAFb38c8e9`
+* **Digital Vendor Shop:** `0x87254613A0AFa45A78eEF2aF294ba6b50EDb783b`
+
+## 🛠️ Installation & Setup
+
+1. **Clone & Install Dependencies:**
+   ```bash
+   git clone [https://github.com/neonmercenary/zero-degree-infra](https://github.com/neonmercenary/zero-degree-infra)
+   pip install -r requirements.txt
+   ape plugins install vyper avalanche
+
+    Configure Environment:
+    Create a .env file with your AGENT_PASS and RPC details. Ensure your alt_user account is loaded in Ape. See .env.example for details
+    ```
+
+## 🚀 Execution Walkthrough (The Demo)
+
+### Step 1: Start the SAP Emulator (Inbound Listener)
+
+This mimics the ERP system waiting for a delivery receipt.
+Bash
+```python
+python simulate_sap.py
+```
+### Step 2: Launch the Agentic Monitor
+
+The worker automatically starts scanning blocks for new orders on the VendorShop.
+Bash
+
+
+### Step 3: Trigger the Procurement Cycle
+
+Simulate an outbound PR from SAP. This hits the SnowGate contract, checks session validity, and executes the on-chain purchase.
+Bash
+
+
+
 **Lead Architect:** Polemarch  
 **Repository:** [github.com/neonmercenary/zero-degree-infra](https://github.com/neonmercenary/zero-degree-infra)
