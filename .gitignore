@@ -1,0 +1,22 @@
+# Ape stuff
+.build/
+.cache/
+
+# Python
+.env
+.venv
+.pytest_cache
+.python-version
+__pycache__
+
+# Misc.
+other_contracts/
+randoms.py
+.env
+.venv/
+__pycache__/
+*.json_state
+.ape/
+
+
+state_*.json

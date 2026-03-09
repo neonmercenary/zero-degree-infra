@@ -1,0 +1,14 @@
+{
+  "network": "avalanche:fuji",
+  "deployer": "0x9Dae1ef186770C059BD35ea2D23dA3a166712e04",
+  "usdc": "0x5425890298aed601595a70AB815c96711a31Bc65",
+  "contracts": {
+    "ZeroDegreeRegistry": {
+      "address": "0xA38B960583eB41791936f9d5C3c7d756dB0c485C",
+      "constructor_args": [
+        "0x5425890298aed601595a70AB815c96711a31Bc65",
+        "0x8004A818BFB912233c491871b3d84c89A494BD9e"
+      ]
+    }
+  }
+}
